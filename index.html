@@ -130,10 +130,10 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);ov
 .cur-text #cur-ring{width:72px;height:72px;border-color:var(--blue-mid);}
 
 /* PRELOADER */
-#preloader{position:fixed;inset:0;background:var(--navy);z-index:999999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;overflow:hidden;}
-#preloader::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;border:1px solid rgba(245,197,24,.08);animation:preRing 4s linear infinite;}
-#preloader::after{content:'';position:absolute;width:380px;height:380px;border-radius:50%;border:1px solid rgba(245,197,24,.12);animation:preRing 3s linear infinite reverse;}
-@keyframes preRing{0%{transform:rotate(0) scale(1)}50%{transform:rotate(180deg) scale(1.05)}100%{transform:rotate(360deg) scale(1)}}
+#preloader{position:fixed;inset:0;background:var(--navy);z-index:999999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;overflow:hidden;padding-bottom:4vh;}
+#preloader::before{content:'';position:absolute;top:50%;left:50%;width:600px;height:600px;border-radius:50%;border:1px solid rgba(245,197,24,.08);animation:preRing 4s linear infinite;}
+#preloader::after{content:'';position:absolute;top:50%;left:50%;width:380px;height:380px;border-radius:50%;border:1px solid rgba(245,197,24,.12);animation:preRing 3s linear infinite reverse;}
+@keyframes preRing{0%{transform:translate(-50%,-50%) rotate(0) scale(1)}50%{transform:translate(-50%,-50%) rotate(180deg) scale(1.05)}100%{transform:translate(-50%,-50%) rotate(360deg) scale(1)}}
 .pre-logo-wrap{text-align:center;}
 .pre-mnf{font-family:'Playfair Display',serif;font-size:5.5rem;font-weight:900;color:var(--gold);letter-spacing:-3px;display:block;opacity:0;transform:translateY(30px);}
 .pre-sub{display:block;color:rgba(255,255,255,.3);font-size:.72rem;letter-spacing:5px;text-transform:uppercase;margin-top:8px;opacity:0;}
@@ -971,7 +971,7 @@ body{background:var(--navy);}
 <a href="#main-content" style="position:absolute;top:-999px;left:-999px;z-index:999999;background:var(--gold);color:var(--navy);padding:8px 18px;font-weight:700;border-radius:4px;text-decoration:none;font-size:.9rem;" onfocus="this.style.top='8px';this.style.left='8px';" onblur="this.style.top='-999px';this.style.left='-999px';">Skip to content</a>
 
 <!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/923128604988" class="wa-float" target="_blank" title="Order on WhatsApp" aria-label="Order via WhatsApp">
+<a href="https://wa.me/923128604988?text=Assalam%20o%20Alaikum!%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20ordering%20premium%20rice%20from%20MNF%20%E2%80%94%20S.J.%20Rice%20Mills.%20Please%20share%20details." class="wa-float" target="_blank" title="Order on WhatsApp" aria-label="Order via WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -1028,7 +1028,7 @@ body{background:var(--navy);}
     </p>
     <div class="hero-btns" data-aos="fade-up" data-aos-delay="540" data-aos-duration="700">
       <a href="#products" class="btn-gold"><i class="fas fa-shopping-basket"></i> Explore Products</a>
-      <a href="https://wa.me/923128604988" class="btn-ghost" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
+      <a href="https://wa.me/923128604988?text=Assalam%20o%20Alaikum!%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20ordering%20premium%20rice%20from%20MNF%20%E2%80%94%20S.J.%20Rice%20Mills.%20Please%20share%20details." class="btn-ghost" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
     </div>
   </div>
 
@@ -1405,7 +1405,7 @@ body{background:var(--navy);}
       <div class="foot-logo">MNF</div>
       <span class="foot-tagline">&ldquo;From golden fields to trusted hands&rdquo;</span>
       <p class="foot-p">Mother Nature Foods &bull; S.J. Rice Mills<br>Mill: Baddomalhi, Narowal, Punjab<br>Outlet: Korang Town, Islamabad<br>Premium Rice — Factory Direct</p>
-      <a href="https://wa.me/923128604988" class="foot-wa" target="_blank"><i class="fab fa-whatsapp" style="font-size:1.2rem;"></i> 0312-860 49 88</a>
+      <a href="https://wa.me/923128604988?text=Assalam%20o%20Alaikum!%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20ordering%20premium%20rice%20from%20MNF%20%E2%80%94%20S.J.%20Rice%20Mills.%20Please%20share%20details." class="foot-wa" target="_blank"><i class="fab fa-whatsapp" style="font-size:1.2rem;"></i> 0312-860 49 88</a>
       <br><br>
       <div style="display:flex;gap:12px;margin-top:4px;">
         <a href="mailto:aartraders19@gmail.com" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:10px 16px;border-radius:10px;color:rgba(255,255,255,.6);font-size:.8rem;text-decoration:none;transition:background .3s;" onmouseover="this.style.background='rgba(255,255,255,.12)'" onmouseout="this.style.background='rgba(255,255,255,.06)'"><i class="fas fa-envelope" style="color:var(--gold);"></i> aartraders19@gmail.com</a>
