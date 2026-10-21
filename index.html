@@ -922,9 +922,12 @@ body{background:var(--navy);}
 .hero-h1{text-shadow:0 4px 40px rgba(0,0,0,.4);}
 .hero-typewriter{min-height:2.2rem;}
 
-/* ── STATS BAR — enhanced ── */
-.stats{background:linear-gradient(90deg,#c9a227 0%,var(--gold) 40%,var(--gold-light) 65%,var(--gold) 100%);background-size:200% auto;animation:statsGold 5s linear infinite;}
-@keyframes statsGold{0%{background-position:0% center}100%{background-position:200% center}}
+/* ── STATS BAR — dark premium redesign ── */
+.stats{background:linear-gradient(135deg,#061728 0%,#081e44 100%)!important;animation:none!important;border-top:2px solid rgba(245,197,24,.22);border-bottom:2px solid rgba(245,197,24,.18);padding:52px 6%!important;}
+.stats::after{background:linear-gradient(90deg,transparent,rgba(245,197,24,.06),transparent)!important;background-size:250% 100%!important;animation:sweep 5s linear infinite!important;}
+.stat-num{color:var(--gold)!important;font-size:3.2rem!important;}
+.stat-lbl{color:rgba(255,255,255,.5)!important;letter-spacing:2px!important;}
+.stat-sep{background:rgba(255,255,255,.1)!important;}
 
 /* ── GLASS NOISE overlay on dark cards ── */
 .feat-card,.var-card,.why-item,.t-box,.testi-card,.tl-box{
@@ -983,6 +986,75 @@ html{overflow-x:hidden;}
 .sh-cta:hover{background:#fff;transform:translateY(-3px);box-shadow:0 10px 32px rgba(245,197,24,.3);}
 @media(max-width:960px){.showcase-inner{grid-template-columns:1fr;gap:50px;}.showcase-imgs{height:320px;max-width:540px;margin:0 auto;}}
 @media(max-width:640px){.showcase{padding:70px 4%;}.showcase-imgs{height:255px;}.sh-img.a{width:54%;height:60%;}.sh-img.b{width:50%;height:55%;}.sh-img.c{width:40%;height:36%;}}
+
+/* ── CERTIFICATIONS ── */
+.certs{background:linear-gradient(155deg,#04152e 0%,#081e44 55%,#04152e 100%);padding:90px 6%;}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;margin-top:56px;}
+.cert-badge{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:22px;padding:32px 22px;text-align:center;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:all .45s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;}
+.cert-badge::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:left;transition:transform .45s;}
+.cert-badge:hover{transform:translateY(-10px);background:rgba(255,255,255,.085);border-color:rgba(245,197,24,.22);box-shadow:0 24px 60px rgba(0,0,0,.4);}
+.cert-badge:hover::before{transform:scaleX(1);}
+.cert-icon{width:72px;height:72px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:1.85rem;background:linear-gradient(135deg,rgba(245,197,24,.15),rgba(245,197,24,.06));border:1.5px solid rgba(245,197,24,.22);}
+.cert-name{font-family:'Playfair Display',serif;color:#fff;font-size:1.05rem;font-weight:700;margin-bottom:8px;}
+.cert-desc{color:rgba(255,255,255,.5);font-size:.81rem;line-height:1.68;}
+.cert-stamp{display:inline-block;background:rgba(245,197,24,.1);border:1px solid rgba(245,197,24,.25);color:var(--gold);font-size:.62rem;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:1px;margin-top:14px;}
+
+/* ── COMPARISON TABLE ── */
+.compare{background:linear-gradient(180deg,#04152e 0%,#061728 100%);padding:90px 6%;}
+.cmp-wrap{overflow-x:auto;margin-top:56px;border-radius:22px;border:1px solid rgba(255,255,255,.08);}
+.cmp-table{width:100%;border-collapse:collapse;min-width:680px;}
+.cmp-table th{background:rgba(245,197,24,.1);color:var(--gold);font-weight:700;font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;padding:18px 20px;text-align:left;border-bottom:1px solid rgba(245,197,24,.2);}
+.cmp-table td{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.055);font-size:.87rem;color:rgba(255,255,255,.74);vertical-align:middle;}
+.cmp-table tr:last-child td{border-bottom:none;}
+.cmp-table tbody tr:hover td{background:rgba(255,255,255,.04);transition:background .25s;}
+.cmp-table td:first-child{font-family:'Playfair Display',serif;color:#fff;font-weight:700;font-size:.93rem;}
+.cmp-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:middle;}
+.cmp-dot.g{background:#6fcf7a;}.cmp-dot.y{background:var(--gold);}
+.cmp-tag{display:inline-block;background:rgba(245,197,24,.1);color:var(--gold-light);font-size:.65rem;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.5px;}
+
+/* ── RECIPES ── */
+.recipes{background:linear-gradient(155deg,#061728 0%,#04152e 100%);padding:90px 6%;}
+.recipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:56px;}
+.recipe-card{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:28px;overflow:hidden;transition:all .45s cubic-bezier(.4,0,.2,1);}
+.recipe-card:hover{transform:translateY(-12px);box-shadow:0 36px 88px rgba(0,0,0,.45);border-color:rgba(245,197,24,.22);}
+.recipe-img{height:220px;overflow:hidden;position:relative;background:linear-gradient(135deg,#061728,#1b5fa8);}
+.recipe-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease;}
+.recipe-card:hover .recipe-img img{transform:scale(1.08);}
+.recipe-img-over{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(4,21,46,.85) 100%);}
+.recipe-label{position:absolute;bottom:16px;left:20px;}
+.recipe-label small{display:block;color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;font-style:normal;margin-bottom:3px;}
+.recipe-label strong{font-family:'Playfair Display',serif;color:#fff;font-size:1.4rem;font-weight:700;}
+.recipe-body{padding:26px 28px 30px;}
+.recipe-meta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;}
+.recipe-meta-item{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.5);font-size:.78rem;}
+.recipe-meta-item i{color:var(--gold);font-size:.72rem;}
+.recipe-rice{display:inline-flex;align-items:center;gap:7px;background:rgba(245,197,24,.09);border:1px solid rgba(245,197,24,.2);color:var(--gold);font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:20px;margin-bottom:16px;}
+.recipe-steps{counter-reset:step;list-style:none;display:flex;flex-direction:column;gap:9px;}
+.recipe-steps li{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.66);font-size:.85rem;line-height:1.65;}
+.recipe-steps li::before{content:counter(step);counter-increment:step;flex-shrink:0;width:22px;height:22px;background:rgba(245,197,24,.13);border:1px solid rgba(245,197,24,.24);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.68rem;font-weight:700;margin-top:2px;}
+.recipe-wa{display:inline-flex;align-items:center;gap:8px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.24);color:#25D366;padding:10px 20px;border-radius:50px;font-size:.82rem;font-weight:600;text-decoration:none;margin-top:18px;transition:background .3s;}
+.recipe-wa:hover{background:rgba(37,211,102,.2);}
+@media(max-width:780px){.recipe-grid{grid-template-columns:1fr;}}
+@media(max-width:640px){.recipe-img{height:185px;}.recipe-label strong{font-size:1.2rem;}.recipe-body{padding:20px 20px 24px;}}
+
+/* ── CALCULATOR ── */
+.calc-sec{background:linear-gradient(180deg,#04152e 0%,#081e44 100%);padding:90px 6%;}
+.calc-box{max-width:720px;margin:56px auto 0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:28px;padding:44px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:0;}
+.calc-label{display:block;color:rgba(255,255,255,.52);font-size:.75rem;font-weight:600;margin-bottom:8px;letter-spacing:.5px;text-transform:uppercase;}
+.calc-input,.calc-select{width:100%;padding:14px 18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);border-radius:12px;color:#fff;font-size:.95rem;font-family:'Inter',sans-serif;outline:none;transition:all .4s;margin-bottom:18px;}
+.calc-input:focus,.calc-select:focus{border-color:var(--gold);background:rgba(255,255,255,.12);box-shadow:0 0 0 3px rgba(245,197,24,.13);}
+.calc-input::placeholder{color:rgba(255,255,255,.22);}
+.calc-select option{background:var(--navy);}
+.calc-btn{background:var(--gold);color:var(--navy);border:none;padding:15px 36px;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all .4s;display:flex;align-items:center;gap:9px;}
+.calc-btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 10px 32px rgba(245,197,24,.28);}
+.calc-result{display:none;margin-top:28px;background:rgba(245,197,24,.07);border:1px solid rgba(245,197,24,.22);border-radius:18px;padding:28px;text-align:center;}
+.calc-result.show{display:block;}
+.calc-result-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--gold);display:block;line-height:1;}
+.calc-result-label{color:rgba(255,255,255,.5);font-size:.84rem;margin-top:6px;display:block;}
+.calc-result-tips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px;}
+.calc-tip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:50px;padding:7px 15px;font-size:.78rem;color:rgba(255,255,255,.62);}
+@media(max-width:640px){.calc-box{padding:26px 20px;}.calc-row{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -1089,24 +1161,24 @@ html{overflow-x:hidden;}
 <!-- MARQUEE TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-inner">
+    <span>1121 Kainat Basmati Double Steam Premium</span><span class="t-sep">✦</span>
+    <span>1121 Kainat Basmati Double Steam Short Grain</span><span class="t-sep">✦</span>
+    <span>1121 Kainat Basmati Sella Premium</span><span class="t-sep">✦</span>
     <span>Super Kernel Basmati</span><span class="t-sep">✦</span>
-    <span>1121 Premium Basmati</span><span class="t-sep">✦</span>
-    <span>IRRI-6 Rice</span><span class="t-sep">✦</span>
-    <span>Sella Parboiled Rice</span><span class="t-sep">✦</span>
-    <span>Brown Rice</span><span class="t-sep">✦</span>
+    <span>Super Punjab Basmati</span><span class="t-sep">✦</span>
     <span>Factory Direct · Narowal</span><span class="t-sep">✦</span>
     <span>25+ Years of Excellence</span><span class="t-sep">✦</span>
     <span>Wholesale &amp; Retail</span><span class="t-sep">✦</span>
-    <span>Islamabad Outlet</span><span class="t-sep">✦</span>
+    <span>Islamabad Outlet — Korang Town</span><span class="t-sep">✦</span>
+    <span>1121 Kainat Basmati Double Steam Premium</span><span class="t-sep">✦</span>
+    <span>1121 Kainat Basmati Double Steam Short Grain</span><span class="t-sep">✦</span>
+    <span>1121 Kainat Basmati Sella Premium</span><span class="t-sep">✦</span>
     <span>Super Kernel Basmati</span><span class="t-sep">✦</span>
-    <span>1121 Premium Basmati</span><span class="t-sep">✦</span>
-    <span>IRRI-6 Rice</span><span class="t-sep">✦</span>
-    <span>Sella Parboiled Rice</span><span class="t-sep">✦</span>
-    <span>Brown Rice</span><span class="t-sep">✦</span>
+    <span>Super Punjab Basmati</span><span class="t-sep">✦</span>
     <span>Factory Direct · Narowal</span><span class="t-sep">✦</span>
     <span>25+ Years of Excellence</span><span class="t-sep">✦</span>
     <span>Wholesale &amp; Retail</span><span class="t-sep">✦</span>
-    <span>Islamabad Outlet</span><span class="t-sep">✦</span>
+    <span>Islamabad Outlet — Korang Town</span><span class="t-sep">✦</span>
   </div>
 </div>
 
@@ -1182,6 +1254,55 @@ html{overflow-x:hidden;}
       <div class="feat-card" data-aos="fade-up" data-aos-delay="240"><div class="f-ico f-t"><i class="fas fa-industry"></i></div><h3>Factory Direct</h3><p>No distributors, no middlemen. Buy straight from our factory outlet — always fresher and always at the best possible price.</p></div>
       <div class="feat-card" data-aos="fade-up" data-aos-delay="320"><div class="f-ico f-p"><i class="fas fa-box-open"></i></div><h3>Sealed Freshness</h3><p>Vacuum-sealed in our signature MNF packaging that locks in natural aroma and freshness until it reaches your kitchen.</p></div>
       <div class="feat-card" data-aos="fade-up" data-aos-delay="400"><div class="f-ico f-r"><i class="fas fa-truck-fast"></i></div><h3>Wholesale &amp; Retail</h3><p>Serving individual families and bulk business orders alike — flexible quantities with consistently premium quality.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certs" id="certifications" aria-label="Quality Certifications">
+  <div class="wrap">
+    <div class="sec-ctr">
+      <span class="s-eye" data-aos="fade-up">Standards &amp; Trust</span>
+      <h2 class="s-title" data-aos="fade-up" data-aos-delay="80">Our <em>Quality</em> Commitments</h2>
+      <p class="s-desc" data-aos="fade-up" data-aos-delay="160">Every bag of MNF rice meets our uncompromising standards — from the field to your kitchen.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-badge" data-aos="fade-up" data-aos-delay="0">
+        <div class="cert-icon">☪️</div>
+        <div class="cert-name">Halal Certified</div>
+        <p class="cert-desc">All our rice products comply with Halal food standards — grown, processed, and packaged with full integrity.</p>
+        <span class="cert-stamp">Halal ✓</span>
+      </div>
+      <div class="cert-badge" data-aos="fade-up" data-aos-delay="80">
+        <div class="cert-icon">🌱</div>
+        <div class="cert-name">100% Natural</div>
+        <p class="cert-desc">No synthetic chemicals, no artificial additives. Pure rice as nature intended — from seed to sealed bag.</p>
+        <span class="cert-stamp">Chemical-Free ✓</span>
+      </div>
+      <div class="cert-badge" data-aos="fade-up" data-aos-delay="160">
+        <div class="cert-icon">🏆</div>
+        <div class="cert-name">Premium Grade A</div>
+        <p class="cert-desc">Only top-grade grains are selected — every batch inspected for size, aroma, colour, and purity before sealing.</p>
+        <span class="cert-stamp">Grade A ✓</span>
+      </div>
+      <div class="cert-badge" data-aos="fade-up" data-aos-delay="240">
+        <div class="cert-icon">🏭</div>
+        <div class="cert-name">Mill Direct</div>
+        <p class="cert-desc">From S.J. Rice Mills in Narowal straight to you — no warehouse delay, no middlemen, maximum freshness.</p>
+        <span class="cert-stamp">Factory Fresh ✓</span>
+      </div>
+      <div class="cert-badge" data-aos="fade-up" data-aos-delay="320">
+        <div class="cert-icon">📦</div>
+        <div class="cert-name">Sealed Freshness</div>
+        <p class="cert-desc">Vacuum-sealed packaging locks in natural aroma and moisture — arrives as fresh as the day it was milled.</p>
+        <span class="cert-stamp">Freshness Sealed ✓</span>
+      </div>
+      <div class="cert-badge" data-aos="fade-up" data-aos-delay="400">
+        <div class="cert-icon">🇵🇰</div>
+        <div class="cert-name">Made in Pakistan</div>
+        <p class="cert-desc">Proudly grown in Narowal — Pakistan's finest rice belt — and milled right here in Punjab. 100% local excellence.</p>
+        <span class="cert-stamp">Pakistan Origin ✓</span>
+      </div>
     </div>
   </div>
 </section>
@@ -1347,6 +1468,140 @@ html{overflow-x:hidden;}
   </div>
 </section>
 
+<!-- COMPARISON TABLE -->
+<section class="compare" id="compare" aria-label="Rice Variety Comparison">
+  <div class="wrap">
+    <div class="sec-ctr">
+      <span class="s-eye" data-aos="fade-up">Choose Your Rice</span>
+      <h2 class="s-title" data-aos="fade-up" data-aos-delay="80">Variety <em>Comparison</em> Guide</h2>
+      <p class="s-desc" data-aos="fade-up" data-aos-delay="160">Not sure which rice to order? Use this quick guide to find your perfect match.</p>
+    </div>
+    <div class="cmp-wrap" data-aos="fade-up" data-aos-delay="200">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>Variety</th>
+            <th>Grain Type</th>
+            <th>Texture</th>
+            <th>Best For</th>
+            <th>Aroma</th>
+            <th>Cook Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1121 Kainat Double Steam Premium</td>
+            <td><span class="cmp-tag">Extra Long</span></td>
+            <td><span class="cmp-dot g"></span>Fluffy &amp; Separate</td>
+            <td>Biryani, Special Events</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>18–20 min</td>
+          </tr>
+          <tr>
+            <td>1121 Kainat Double Steam Short Grain</td>
+            <td><span class="cmp-tag">Short</span></td>
+            <td><span class="cmp-dot y"></span>Rich &amp; Moist</td>
+            <td>Home Cooking, Restaurants</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>15–18 min</td>
+          </tr>
+          <tr>
+            <td>1121 Kainat Basmati Sella Premium</td>
+            <td><span class="cmp-tag">Long</span></td>
+            <td><span class="cmp-dot g"></span>Firm &amp; Non-sticky</td>
+            <td>Catering, Large Events</td>
+            <td>⭐⭐⭐⭐</td>
+            <td>20–22 min</td>
+          </tr>
+          <tr>
+            <td>Super Kernel Basmati</td>
+            <td><span class="cmp-tag">Extra Long</span></td>
+            <td><span class="cmp-dot g"></span>Fluffy &amp; Aromatic</td>
+            <td>Biryani, Pulao, Daily</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>18–20 min</td>
+          </tr>
+          <tr>
+            <td>Super Punjab Basmati</td>
+            <td><span class="cmp-tag">Long</span></td>
+            <td><span class="cmp-dot g"></span>Fluffy &amp; Separate</td>
+            <td>Everyday Cooking, Pulao</td>
+            <td>⭐⭐⭐⭐</td>
+            <td>16–18 min</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align:center;margin-top:32px;" data-aos="fade-up">
+      <a href="https://wa.me/923128604988?text=Assalam%20o%20Alaikum!%20I%20need%20help%20choosing%20the%20right%20MNF%20rice%20variety%20for%20my%20needs.%20Can%20you%20help%3F" class="sh-cta" target="_blank"><i class="fab fa-whatsapp"></i> Ask Us to Help You Choose</a>
+    </div>
+  </div>
+</section>
+
+<!-- RECIPES -->
+<section class="recipes" id="recipes" aria-label="Recipe Ideas">
+  <div class="wrap">
+    <div class="sec-ctr">
+      <span class="s-eye" data-aos="fade-up">Cook with MNF</span>
+      <h2 class="s-title" data-aos="fade-up" data-aos-delay="80">Signature <em>Recipes</em></h2>
+      <p class="s-desc" data-aos="fade-up" data-aos-delay="160">Our premium basmati elevates every dish. Two beloved classics, perfected with MNF rice.</p>
+    </div>
+    <div class="recipe-grid">
+
+      <!-- Biryani -->
+      <div class="recipe-card" data-aos="fade-right" data-aos-duration="900">
+        <div class="recipe-img">
+          <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" alt="Dum Chicken Biryani with premium basmati rice" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#061728,#1b5fa8)'">
+          <div class="recipe-img-over"></div>
+          <div class="recipe-label"><small>Classic</small><strong>Dum Chicken Biryani</strong></div>
+        </div>
+        <div class="recipe-body">
+          <span class="recipe-rice"><i class="fas fa-seedling"></i> Best with: 1121 Kainat Double Steam Premium</span>
+          <div class="recipe-meta">
+            <div class="recipe-meta-item"><i class="fas fa-users"></i> Serves 4–6</div>
+            <div class="recipe-meta-item"><i class="fas fa-clock"></i> 45–55 min</div>
+            <div class="recipe-meta-item"><i class="fas fa-fire-alt"></i> Medium</div>
+          </div>
+          <ol class="recipe-steps">
+            <li>Soak 2 cups MNF 1121 Kainat in water for 30 min, then parboil with whole spices until 70% done.</li>
+            <li>Marinate 700g chicken in yoghurt, fried onions, ginger-garlic paste, and biryani masala for 20 min.</li>
+            <li>Cook marinated chicken on medium heat until oil separates and chicken is 80% done.</li>
+            <li>Layer parboiled rice over chicken. Add saffron milk, fresh mint, and fried onions on top.</li>
+            <li>Seal with dough or foil and cook on dum (low heat) 20 min. Serve hot with raita.</li>
+          </ol>
+          <a href="https://wa.me/923128604988?text=Assalam%20o%20Alaikum!%20I%20want%20to%20order%201121%20Kainat%20Basmati%20Double%20Steam%20Premium%20for%20biryani." class="recipe-wa" target="_blank"><i class="fab fa-whatsapp"></i> Order This Rice</a>
+        </div>
+      </div>
+
+      <!-- Pulao -->
+      <div class="recipe-card" data-aos="fade-left" data-aos-duration="900" data-aos-delay="100">
+        <div class="recipe-img">
+          <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" alt="Mutton Yakhni Pulao with Super Kernel Basmati" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#061728,#0d3b72)'">
+          <div class="recipe-img-over"></div>
+          <div class="recipe-label"><small>Traditional</small><strong>Mutton Yakhni Pulao</strong></div>
+        </div>
+        <div class="recipe-body">
+          <span class="recipe-rice"><i class="fas fa-seedling"></i> Best with: Super Kernel Basmati</span>
+          <div class="recipe-meta">
+            <div class="recipe-meta-item"><i class="fas fa-users"></i> Serves 4–6</div>
+            <div class="recipe-meta-item"><i class="fas fa-clock"></i> 50–60 min</div>
+            <div class="recipe-meta-item"><i class="fas fa-fire-alt"></i> Easy</div>
+          </div>
+          <ol class="recipe-steps">
+            <li>Prepare yakhni: simmer 500g mutton with whole spices, onion, and ginger in 5 cups water 30 min.</li>
+            <li>Wash and soak 2 cups MNF Super Kernel Basmati for 30 min. Strain stock, discard solids.</li>
+            <li>Fry sliced onions in ghee until golden. Add mutton pieces and cook until lightly browned.</li>
+            <li>Add 3.5 cups strained stock. Bring to boil, add soaked rice and stir once gently.</li>
+            <li>Cook covered on high 5 min, then lowest heat 15 min until done. Rest 5 min and serve.</li>
+          </ol>
+          <a href="https://wa.me/923128604988?text=Assalam%20o%20Alaikum!%20I%20want%20to%20order%20Super%20Kernel%20Basmati%20for%20pulao." class="recipe-wa" target="_blank"><i class="fab fa-whatsapp"></i> Order This Rice</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- WHY US -->
 <section class="why" id="why">
   <div class="wrap">
@@ -1473,6 +1728,39 @@ html{overflow-x:hidden;}
   </div>
 </section>
 
+<!-- RICE CALCULATOR -->
+<section class="calc-sec" id="calculator" aria-label="Rice Quantity Calculator">
+  <div class="wrap">
+    <div class="sec-ctr">
+      <span class="s-eye" data-aos="fade-up">Plan Your Order</span>
+      <h2 class="s-title" data-aos="fade-up" data-aos-delay="80">Rice Quantity <em>Calculator</em></h2>
+      <p class="s-desc" data-aos="fade-up" data-aos-delay="160">Not sure how much to order? Enter your details and get an instant recommendation.</p>
+    </div>
+    <div class="calc-box" data-aos="fade-up" data-aos-delay="200">
+      <div class="calc-row">
+        <div>
+          <label class="calc-label">Number of People</label>
+          <input type="number" class="calc-input" id="calcPeople" placeholder="e.g. 20" min="1" max="10000">
+        </div>
+        <div>
+          <label class="calc-label">Meal Type</label>
+          <select class="calc-select" id="calcType">
+            <option value="biryani">Biryani / Pulao (main dish)</option>
+            <option value="plain">Plain Rice (side dish)</option>
+            <option value="event">Wedding / Large Catering Event</option>
+          </select>
+        </div>
+      </div>
+      <button class="calc-btn" onclick="calcRice()"><i class="fas fa-calculator"></i> Calculate</button>
+      <div class="calc-result" id="calcResult">
+        <span class="calc-result-num" id="calcKg">–</span>
+        <span class="calc-result-label" id="calcLabel">kg of raw rice needed</span>
+        <div class="calc-result-tips" id="calcTips"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact" aria-label="Contact and Order">
   <div class="wrap">
@@ -1557,13 +1845,13 @@ html{overflow-x:hidden;}
       </ul>
     </div>
     <div class="foot-col">
-      <h4>Products</h4>
+      <h4>Our Varieties</h4>
       <ul>
+        <li><a href="#varieties">1121 Kainat Double Steam Premium</a></li>
+        <li><a href="#varieties">1121 Kainat Double Steam Short Grain</a></li>
+        <li><a href="#varieties">1121 Kainat Sella Premium</a></li>
         <li><a href="#varieties">Super Kernel Basmati</a></li>
-        <li><a href="#varieties">1121 Basmati Rice</a></li>
-        <li><a href="#varieties">IRRI-6 Rice</a></li>
-        <li><a href="#varieties">Sella Parboiled Rice</a></li>
-        <li><a href="#varieties">Brown Rice</a></li>
+        <li><a href="#varieties">Super Punjab Basmati</a></li>
         <li><a href="#products">Wholesale Orders</a></li>
         <li><a href="#products">Retail Packages</a></li>
       </ul>
@@ -2003,6 +2291,32 @@ document.querySelectorAll('.btn-gold,.btn-ghost,.nav-cta,.prod-cta,.submit-btn')
   });
   btn.addEventListener('mouseleave',()=>gsap.to(btn,{x:0,y:0,duration:.55,ease:'elastic.out(1,.4)'}));
 });
+
+/* ── RICE CALCULATOR ── */
+function calcRice(){
+  const ppl=parseInt(document.getElementById('calcPeople').value);
+  const type=document.getElementById('calcType').value;
+  if(!ppl||ppl<1){alert('Please enter the number of people.');return;}
+  const gPer={biryani:120,plain:80,event:145}[type];
+  const totalG=ppl*gPer;
+  const totalKg=(totalG/1000).toFixed(1);
+  const cups=Math.ceil(totalG/180);
+  let bagTip;
+  if(totalKg<=5) bagTip='A 5 kg retail pack is enough.';
+  else if(totalKg<=20) bagTip='Half a 40 kg bag — or order a full 40 kg bag for future use.';
+  else if(totalKg<=40) bagTip='One 40 kg bag is ideal for this order.';
+  else if(totalKg<=50) bagTip='One 50 kg bag covers you perfectly — best value option.';
+  else bagTip=`You need ${Math.ceil(totalKg/50)} × 50 kg bags. Contact us for a wholesale quote!`;
+  const mealLabel={biryani:'Biryani / Pulao',plain:'Plain / Side Dish',event:'Wedding / Catering'}[type];
+  const waMsg=encodeURIComponent(`Assalam o Alaikum! I need ${totalKg}kg of MNF rice for ${ppl} people (${mealLabel}). Please advise.`);
+  document.getElementById('calcKg').textContent=totalKg+' kg';
+  document.getElementById('calcLabel').textContent=`for ${ppl} people · ${cups} cups raw rice · ${mealLabel}`;
+  document.getElementById('calcTips').innerHTML=
+    `<span class="calc-tip"><i class="fas fa-box"></i> ${bagTip}</span>`+
+    `<span class="calc-tip"><a href="https://wa.me/923128604988?text=${waMsg}" target="_blank" style="color:var(--gold);text-decoration:none;"><i class="fab fa-whatsapp"></i> Order ${totalKg} kg on WhatsApp</a></span>`;
+  const r=document.getElementById('calcResult');
+  r.classList.add('show');
+}
 
 /* ── FORM ── */
 function submitForm(e){
