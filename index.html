@@ -935,6 +935,9 @@ body{background:var(--navy);}
 /* ── BACK TO TOP — premium ── */
 #backTop{background:rgba(4,21,46,.9)!important;}
 
+/* ── FIX HORIZONTAL OVERFLOW (mobile scroll) ── */
+html{overflow-x:hidden;}
+
 /* ── HERO MOBILE — bigger headline ── */
 @media(max-width:640px){
   .hero-h1{font-size:clamp(2.9rem,12vw,4.5rem)!important;line-height:1.05!important;}
@@ -943,6 +946,43 @@ body{background:var(--navy);}
 @media(max-width:480px){
   .hero-h1{font-size:clamp(2.5rem,13vw,3.8rem)!important;}
 }
+
+/* ── VARIETY CARD WITH IMAGE ── */
+.var-grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px;}
+.var-card{padding:0!important;overflow:hidden;display:flex;flex-direction:column;text-align:left;}
+.var-card::before{display:none!important;}
+.var-img-wrap{position:relative;height:175px;overflow:hidden;background:linear-gradient(135deg,#061728 0%,#1b5fa8 100%);flex-shrink:0;}
+.var-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease;}
+.var-card:hover .var-img-wrap img{transform:scale(1.08);}
+.var-img-grad{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 35%,rgba(4,21,46,.72) 100%);}
+.var-tag-abs{position:absolute!important;top:12px!important;right:12px!important;margin:0!important;z-index:2;background:rgba(4,21,46,.72)!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+.var-body{padding:20px 22px 24px;flex:1;}
+.var-body .var-emoji{font-size:1.9rem;display:block;margin-bottom:10px;}
+.var-body .var-name{color:rgba(255,255,255,.92)!important;font-size:1rem!important;font-weight:700;margin-bottom:8px;}
+.var-body .var-desc{color:rgba(255,255,255,.52)!important;font-size:.83rem!important;line-height:1.72;}
+.var-card:hover{transform:translateY(-10px)!important;box-shadow:0 30px 72px rgba(0,0,0,.44)!important;border-color:rgba(245,197,24,.2)!important;}
+
+/* ── VISUAL SHOWCASE SECTION ── */
+.showcase{background:linear-gradient(155deg,#061728 0%,#04152e 100%);padding:100px 6%;overflow:hidden;position:relative;}
+.showcase::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,197,24,.06) 0%,transparent 65%);top:-150px;right:-100px;pointer-events:none;}
+.showcase-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.showcase-imgs{position:relative;height:420px;}
+.sh-img{position:absolute;border-radius:22px;object-fit:cover;display:block;box-shadow:0 20px 60px rgba(0,0,0,.55);}
+.sh-img.a{width:56%;height:62%;top:0;left:0;animation:shFloat1 5s ease-in-out infinite;border:2px solid rgba(245,197,24,.2);}
+.sh-img.b{width:52%;height:58%;top:24%;right:0;animation:shFloat2 6.5s ease-in-out infinite;}
+.sh-img.c{width:42%;height:38%;bottom:0;left:20%;animation:shFloat3 4.5s ease-in-out infinite;border:3px solid rgba(245,197,24,.28);z-index:2;}
+@keyframes shFloat1{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-18px) rotate(.5deg)}}
+@keyframes shFloat2{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(16px) rotate(-.5deg)}}
+@keyframes shFloat3{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.showcase-text .s-title{color:#fff;}
+.showcase-text .s-desc{color:rgba(255,255,255,.62);margin-bottom:24px;}
+.sh-checks{display:flex;flex-direction:column;gap:14px;margin-top:22px;}
+.sh-ck{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.76);font-size:.9rem;}
+.sh-ck i{color:var(--gold);font-size:.8rem;flex-shrink:0;}
+.sh-cta{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--navy);padding:14px 32px;border-radius:50px;font-weight:700;text-decoration:none;margin-top:28px;transition:all .4s;font-size:.92rem;}
+.sh-cta:hover{background:#fff;transform:translateY(-3px);box-shadow:0 10px 32px rgba(245,197,24,.3);}
+@media(max-width:960px){.showcase-inner{grid-template-columns:1fr;gap:50px;}.showcase-imgs{height:320px;max-width:540px;margin:0 auto;}}
+@media(max-width:640px){.showcase{padding:70px 4%;}.showcase-imgs{height:255px;}.sh-img.a{width:54%;height:60%;}.sh-img.b{width:50%;height:55%;}.sh-img.c{width:40%;height:36%;}}
 </style>
 </head>
 <body>
@@ -1172,16 +1212,16 @@ body{background:var(--navy);}
       <div class="prod-card star" data-aos="fade-up" data-aos-delay="100">
         <div class="prod-badge">Best Seller</div>
         <div class="prod-qty">50<small>kg</small></div>
-        <div class="prod-orb">🌾</div>
-        <h3 class="prod-name">1121 Premium Basmati</h3>
-        <p class="prod-sub">Most popular size — best value per kg.</p>
+        <div class="prod-orb">✨</div>
+        <h3 class="prod-name">1121 Kainat Basmati Double Steam Premium</h3>
+        <p class="prod-sub">Most popular — world's longest grain, unmatched aroma.</p>
         <ul class="prod-perks">
-          <li><i class="fas fa-check"></i> World's longest basmati grain</li>
+          <li><i class="fas fa-check"></i> Double steamed — superior aroma &amp; fluffiness</li>
           <li><i class="fas fa-check"></i> Direct from S.J. Rice Mills, Narowal</li>
           <li><i class="fas fa-check"></i> Doubles in length when cooked</li>
-          <li><i class="fas fa-check"></i> Lowest price at mill-direct rate</li>
+          <li><i class="fas fa-check"></i> Best mill-direct price on 50 kg bag</li>
         </ul>
-        <a href="https://wa.me/923128604988?text=I want to order a 50kg bag of 1121 Basmati from MNF" class="prod-cta" target="_blank"><i class="fab fa-whatsapp"></i> Order via WhatsApp</a>
+        <a href="https://wa.me/923128604988?text=Assalam%20o%20Alaikum!%20I%20want%20to%20order%20a%2050kg%20bag%20of%201121%20Kainat%20Basmati%20Double%20Steam%20Premium%20from%20MNF." class="prod-cta" target="_blank"><i class="fab fa-whatsapp"></i> Order via WhatsApp</a>
       </div>
       <div class="prod-card" data-aos="fade-up" data-aos-delay="200">
         <div class="prod-qty" style="font-size:2.6rem;line-height:1.2;">40–50<small>kg</small></div>
@@ -1206,14 +1246,103 @@ body{background:var(--navy);}
     <div class="sec-ctr">
       <span class="s-eye" data-aos="fade-up">Our Collection</span>
       <h2 class="s-title" data-aos="fade-up" data-aos-delay="80">Rice <em>Varieties</em> We Offer</h2>
-      <p class="s-desc" data-aos="fade-up" data-aos-delay="160">From the finest aromatic basmati to everyday staples — we stock every variety your kitchen needs.</p>
+      <p class="s-desc" data-aos="fade-up" data-aos-delay="160">Five premium varieties — each grown in Narowal's finest rice belt, milled and sealed fresh at S.J. Rice Mills.</p>
     </div>
     <div class="var-grid">
-      <div class="var-card" data-aos="zoom-in" data-aos-delay="0"><span class="var-emoji">🌾</span><div class="var-name">Super Kernel Basmati</div><p class="var-desc">Pakistan's finest long-grain variety — extra aromatic, silky texture, perfect for biryani and pilaf.</p><span class="var-tag">Premium</span></div>
-      <div class="var-card" data-aos="zoom-in" data-aos-delay="80"><span class="var-emoji">✨</span><div class="var-name">1121 Basmati</div><p class="var-desc">Extra-long grain with exceptional elongation after cooking — the hallmark of premium Pakistani cuisine.</p><span class="var-tag">Signature</span></div>
-      <div class="var-card" data-aos="zoom-in" data-aos-delay="160"><span class="var-emoji">🍚</span><div class="var-name">IRRI-6 Rice</div><p class="var-desc">The everyday household staple — versatile, nutritious, and economical. Great for daily cooking.</p><span class="var-tag">Everyday</span></div>
-      <div class="var-card" data-aos="zoom-in" data-aos-delay="240"><span class="var-emoji">🟡</span><div class="var-name">Sella Parboiled Rice</div><p class="var-desc">Parboiled for superior nutrition. Non-sticky, fluffy grains ideal for restaurants and large meals.</p><span class="var-tag">Parboiled</span></div>
-      <div class="var-card" data-aos="zoom-in" data-aos-delay="320"><span class="var-emoji">🌿</span><div class="var-name">Brown Rice</div><p class="var-desc">Whole grain, minimally processed. Rich in fiber and nutrients — the health-conscious family's choice.</p><span class="var-tag">Health</span></div>
+
+      <!-- 1 -->
+      <div class="var-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="var-img-wrap">
+          <img src="https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=600&q=80" alt="1121 Kainat Basmati Double Steam Premium Rice" loading="lazy" onerror="this.style.display='none'">
+          <div class="var-img-grad"></div>
+          <span class="var-tag var-tag-abs">Double Steam</span>
+        </div>
+        <div class="var-body">
+          <span class="var-emoji">✨</span>
+          <div class="var-name">1121 Kainat Basmati Double Steam Premium</div>
+          <p class="var-desc">World's longest grain — double steamed for unmatched aroma and a perfectly fluffy, non-sticky texture in every biryani.</p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="var-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="var-img-wrap">
+          <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=600&q=80" alt="1121 Kainat Basmati Double Steam Short Grain Rice" loading="lazy" onerror="this.style.display='none'">
+          <div class="var-img-grad"></div>
+          <span class="var-tag var-tag-abs">Short Grain</span>
+        </div>
+        <div class="var-body">
+          <span class="var-emoji">🌾</span>
+          <div class="var-name">1121 Kainat Basmati Double Steam Premium Short Grain</div>
+          <p class="var-desc">Plump short-grain Kainat, double steamed. Richer flavour, quicker to cook — beloved by home cooks and restaurants alike.</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="var-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="var-img-wrap">
+          <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80" alt="1121 Kainat Basmati Sella Premium Parboiled Rice" loading="lazy" onerror="this.style.display='none'">
+          <div class="var-img-grad"></div>
+          <span class="var-tag var-tag-abs">Sella Parboiled</span>
+        </div>
+        <div class="var-body">
+          <span class="var-emoji">🟡</span>
+          <div class="var-name">1121 Kainat Basmati Sella Premium</div>
+          <p class="var-desc">Golden parboiled Kainat — firmer texture, higher nutrition. Non-sticky fluffy grains, ideal for large gatherings and catering.</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="var-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="var-img-wrap">
+          <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=600&q=80" alt="Super Kernel Basmati Rice Pakistan" loading="lazy" onerror="this.style.display='none'">
+          <div class="var-img-grad"></div>
+          <span class="var-tag var-tag-abs">Premium</span>
+        </div>
+        <div class="var-body">
+          <span class="var-emoji">👑</span>
+          <div class="var-name">Super Kernel Basmati</div>
+          <p class="var-desc">Pakistan's signature basmati — extra-long grain with the legendary Narowal fragrance. The benchmark for premium biryani and pulao.</p>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="var-card" data-aos="fade-up" data-aos-delay="320">
+        <div class="var-img-wrap">
+          <img src="https://images.unsplash.com/photo-1559912275-7e1a1c99b9fd?auto=format&fit=crop&w=600&q=80" alt="Super Punjab Basmati Rice" loading="lazy" onerror="this.style.display='none'">
+          <div class="var-img-grad"></div>
+          <span class="var-tag var-tag-abs">Punjab Special</span>
+        </div>
+        <div class="var-body">
+          <span class="var-emoji">🌿</span>
+          <div class="var-name">Super Punjab Basmati</div>
+          <p class="var-desc">Grown in the heart of Punjab's finest rice belt — full-flavoured, aromatic grains that cook fluffy and separate every single time.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VISUAL SHOWCASE -->
+<section class="showcase">
+  <div class="showcase-inner">
+    <div class="showcase-imgs" data-aos="fade-right" data-aos-duration="900">
+      <img class="sh-img a" src="https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=700&q=80" alt="Premium basmati rice grains close up" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0d3b72,#1b5fa8)'">
+      <img class="sh-img b" src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=700&q=80" alt="Rice fields Narowal Punjab Pakistan" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#061728,#0d3b72)'">
+      <img class="sh-img c" src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=500&q=80" alt="Cooked premium basmati rice" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#1b5fa8,#2b7de9)'">
+    </div>
+    <div class="showcase-text" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+      <span class="s-eye">Pure Quality</span>
+      <h2 class="s-title">Every Grain Tells<br><em>Our Story</em></h2>
+      <p class="s-desc">From the fertile fields of Baddomalhi, Narowal — Pakistan's finest rice belt — to your kitchen table. See the difference quality makes in every single grain.</p>
+      <div class="sh-checks">
+        <div class="sh-ck"><i class="fas fa-check-circle"></i> Extra-long grain — measured and graded at our mill</div>
+        <div class="sh-ck"><i class="fas fa-check-circle"></i> Natural aroma locked in at source — no cold-storage delay</div>
+        <div class="sh-ck"><i class="fas fa-check-circle"></i> Hand-inspected before every batch is sealed</div>
+        <div class="sh-ck"><i class="fas fa-check-circle"></i> 100% chemical-free — pure as nature intended</div>
+      </div>
+      <a href="https://wa.me/923128604988?text=Assalam%20o%20Alaikum!%20I%20want%20to%20know%20more%20about%20MNF%20rice%20varieties%20and%20pricing." class="sh-cta" target="_blank"><i class="fab fa-whatsapp"></i> Ask About Our Rice</a>
     </div>
   </div>
 </section>
@@ -1372,15 +1501,16 @@ body{background:var(--navy);}
           <div class="fg">
             <label>Product Interest</label>
             <select>
-              <option>Super Kernel Basmati — 40 kg bag</option>
-              <option>Super Kernel Basmati — 50 kg bag</option>
-              <option>1121 Basmati Rice — 40 kg bag</option>
-              <option>1121 Basmati Rice — 50 kg bag</option>
-              <option>IRRI-6 Rice — 40 kg bag</option>
-              <option>IRRI-6 Rice — 50 kg bag</option>
-              <option>Sella (Parboiled) Rice — 40 kg bag</option>
-              <option>Sella (Parboiled) Rice — 50 kg bag</option>
-              <option>Brown Rice — 40 kg bag</option>
+              <option>1121 Kainat Basmati Double Steam Premium — 40 kg</option>
+              <option>1121 Kainat Basmati Double Steam Premium — 50 kg</option>
+              <option>1121 Kainat Double Steam Premium Short Grain — 40 kg</option>
+              <option>1121 Kainat Double Steam Premium Short Grain — 50 kg</option>
+              <option>1121 Kainat Basmati Sella Premium — 40 kg</option>
+              <option>1121 Kainat Basmati Sella Premium — 50 kg</option>
+              <option>Super Kernel Basmati — 40 kg</option>
+              <option>Super Kernel Basmati — 50 kg</option>
+              <option>Super Punjab Basmati — 40 kg</option>
+              <option>Super Punjab Basmati — 50 kg</option>
               <option>Bulk / Wholesale — Multiple Bags</option>
               <option>Mixed Order / Other</option>
             </select>
