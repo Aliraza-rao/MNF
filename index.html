@@ -11,6 +11,8 @@
 <meta name="author" content="MNF Mother Nature Foods — S.J. Rice Mills">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#04152e">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
 <link rel="canonical" href="https://mnf-rice-mills.com/">
 
 <!-- ═══ OPEN GRAPH (Facebook, WhatsApp, LinkedIn) ═══ -->
@@ -100,8 +102,16 @@
 }
 </script>
 
-<!-- Fonts -->
+<!-- DNS + TCP preconnect for all CDNs — shaves 100–300ms off first load -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="preconnect" href="https://images.pexels.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 
 <!-- Icons -->
@@ -135,8 +145,8 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);ov
 #preloader::after{content:'';position:absolute;top:50%;left:50%;width:380px;height:380px;border-radius:50%;border:1px solid rgba(245,197,24,.12);animation:preRing 3s linear infinite reverse;}
 @keyframes preRing{0%{transform:translate(-50%,-50%) rotate(0) scale(1)}50%{transform:translate(-50%,-50%) rotate(180deg) scale(1.05)}100%{transform:translate(-50%,-50%) rotate(360deg) scale(1)}}
 .pre-logo-wrap{text-align:center;}
-.pre-mnf{font-family:'Playfair Display',serif;font-size:5.5rem;font-weight:900;color:var(--gold);letter-spacing:-3px;display:block;opacity:0;transform:translateY(30px);}
-.pre-sub{display:block;color:rgba(255,255,255,.3);font-size:.72rem;letter-spacing:5px;text-transform:uppercase;margin-top:8px;opacity:0;}
+.pre-logo-img{width:180px;height:180px;object-fit:contain;display:block;margin:0 auto;background:#fff;border-radius:50%;padding:16px;box-shadow:0 0 60px rgba(245,197,24,.22);opacity:0;transform:translateY(30px);}
+.pre-sub{display:block;color:rgba(255,255,255,.3);font-size:.72rem;letter-spacing:5px;text-transform:uppercase;margin-top:16px;opacity:0;}
 .pre-bar{width:220px;height:2px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden;margin-top:8px;}
 .pre-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-light));border-radius:2px;}
 .pre-pct{color:rgba(255,255,255,.25);font-size:.7rem;letter-spacing:2px;}
@@ -945,7 +955,8 @@ body{background:var(--navy);}
 #backTop{background:rgba(4,21,46,.9)!important;}
 
 /* ── FIX HORIZONTAL OVERFLOW (mobile scroll) ── */
-html{overflow-x:hidden;}
+/* overflow-x:hidden on html breaks Lenis — body-only is correct */
+html,body{overflow-x:hidden;max-width:100%;}
 
 /* ── HERO MOBILE — bigger headline ── */
 @media(max-width:640px){
@@ -1061,6 +1072,15 @@ html{overflow-x:hidden;}
 .calc-result-tips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px;}
 .calc-tip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:50px;padding:7px 15px;font-size:.78rem;color:rgba(255,255,255,.62);}
 @media(max-width:640px){.calc-box{padding:26px 20px;}.calc-row{grid-template-columns:1fr;}}
+
+/* ── LOGO IMAGE PLACEMENTS ── */
+.about-logo-img{width:200px;height:200px;object-fit:contain;display:block;margin:0 auto 14px;background:#fff;border-radius:50%;padding:18px;box-shadow:0 8px 40px rgba(0,0,0,.3),0 0 0 3px rgba(245,197,24,.2);}
+.foot-logo-img{width:130px;height:auto;object-fit:contain;display:block;background:#fff;border-radius:16px;padding:10px 14px;margin-bottom:10px;}
+@media(max-width:640px){
+  .pre-logo-img{width:140px;height:140px;padding:12px;}
+  .about-logo-img{width:160px;height:160px;padding:14px;}
+  .foot-logo-img{width:110px;}
+}
 </style>
 </head>
 <body>
@@ -1075,7 +1095,7 @@ html{overflow-x:hidden;}
 <!-- PRELOADER -->
 <div id="preloader">
   <div class="pre-logo-wrap">
-    <span class="pre-mnf">MNF</span>
+    <img src="logo.png" alt="MNF Mother Nature Foods" class="pre-logo-img">
     <span class="pre-sub">Mother Nature Foods &bull; S.J. Rice Mills</span>
   </div>
   <div>
@@ -1096,7 +1116,9 @@ html{overflow-x:hidden;}
 <!-- NAV -->
 <nav id="nav" aria-label="Main navigation">
   <a href="#home" class="nav-logo">
-    <div class="nav-mark">MNF</div>
+    <div class="nav-mark" style="background:#fff;padding:3px;overflow:hidden;">
+      <img src="logo.png" alt="MNF Logo" style="width:100%;height:100%;object-fit:contain;display:block;">
+    </div>
     <div class="nav-info">
       <span class="nav-name">Mother Nature Foods</span>
       <span class="nav-sub">S.J. Rice Mills &bull; Narowal</span>
@@ -1212,7 +1234,7 @@ html{overflow-x:hidden;}
           <div class="about-ghost">MNF</div>
           <div class="about-strip"></div>
           <div class="about-inner">
-            <div class="mnf-big">MNF</div>
+            <img src="logo.png" alt="MNF Mother Nature Foods Logo" class="about-logo-img">
             <div class="mnf-badge">MOTHER NATURE FOODS</div>
             <p class="mnf-loc">S.J. Rice Mills &bull; Baddomalhi, Narowal</p>
           </div>
@@ -1380,7 +1402,7 @@ html{overflow-x:hidden;}
       <!-- 1 -->
       <div class="var-card" data-aos="fade-up" data-aos-delay="0">
         <div class="var-img-wrap">
-          <img src="https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=600&q=80" alt="1121 Kainat Basmati Double Steam Premium Rice" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://images.pexels.com/photos/7665442/pexels-photo-7665442.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="1121 Kainat Basmati Double Steam Premium Rice grains close up" loading="lazy" onerror="this.style.display='none'">
           <div class="var-img-grad"></div>
           <span class="var-tag var-tag-abs">Double Steam</span>
         </div>
@@ -1394,7 +1416,7 @@ html{overflow-x:hidden;}
       <!-- 2 -->
       <div class="var-card" data-aos="fade-up" data-aos-delay="80">
         <div class="var-img-wrap">
-          <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=600&q=80" alt="1121 Kainat Basmati Double Steam Short Grain Rice" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://images.pexels.com/photos/18328392/pexels-photo-18328392.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="1121 Kainat Basmati Double Steam Short Grain Rice" loading="lazy" onerror="this.style.display='none'">
           <div class="var-img-grad"></div>
           <span class="var-tag var-tag-abs">Short Grain</span>
         </div>
@@ -1408,7 +1430,7 @@ html{overflow-x:hidden;}
       <!-- 3 -->
       <div class="var-card" data-aos="fade-up" data-aos-delay="160">
         <div class="var-img-wrap">
-          <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80" alt="1121 Kainat Basmati Sella Premium Parboiled Rice" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://images.pexels.com/photos/4187621/pexels-photo-4187621.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="1121 Kainat Basmati Sella Premium Parboiled Rice golden" loading="lazy" onerror="this.style.display='none'">
           <div class="var-img-grad"></div>
           <span class="var-tag var-tag-abs">Sella Parboiled</span>
         </div>
@@ -1422,7 +1444,7 @@ html{overflow-x:hidden;}
       <!-- 4 -->
       <div class="var-card" data-aos="fade-up" data-aos-delay="240">
         <div class="var-img-wrap">
-          <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=600&q=80" alt="Super Kernel Basmati Rice Pakistan" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Super Kernel Basmati Rice white grains" loading="lazy" onerror="this.style.display='none'">
           <div class="var-img-grad"></div>
           <span class="var-tag var-tag-abs">Premium</span>
         </div>
@@ -1436,7 +1458,7 @@ html{overflow-x:hidden;}
       <!-- 5 -->
       <div class="var-card" data-aos="fade-up" data-aos-delay="320">
         <div class="var-img-wrap">
-          <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=600&q=80" alt="Super Punjab Basmati Rice grains close up" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://images.pexels.com/photos/4110255/pexels-photo-4110255.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Super Punjab Basmati Rice premium grains" loading="lazy" onerror="this.style.display='none'">
           <div class="var-img-grad"></div>
           <span class="var-tag var-tag-abs">Punjab Special</span>
         </div>
@@ -1826,7 +1848,7 @@ html{overflow-x:hidden;}
 <footer>
   <div class="foot-grid">
     <div>
-      <div class="foot-logo">MNF</div>
+      <img src="logo.png" alt="MNF Mother Nature Foods" class="foot-logo-img">
       <span class="foot-tagline">&ldquo;From golden fields to trusted hands&rdquo;</span>
       <p class="foot-p">Mother Nature Foods &bull; S.J. Rice Mills<br>Mill: Baddomalhi, Narowal, Punjab<br>Outlet: Korang Town, Islamabad<br>Premium Rice — Factory Direct</p>
       <a href="https://wa.me/923128604988?text=Assalam%20o%20Alaikum!%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20ordering%20premium%20rice%20from%20MNF%20%E2%80%94%20S.J.%20Rice%20Mills.%20Please%20share%20details." class="foot-wa" target="_blank"><i class="fab fa-whatsapp" style="font-size:1.2rem;"></i> 0312-860 49 88</a>
@@ -1904,7 +1926,7 @@ gsap.ticker.lagSmoothing(0);
 /* ── PRELOADER ── */
 gsap.registerPlugin(ScrollTrigger);
 const pre=document.getElementById('preloader');
-const preMNF=pre.querySelector('.pre-mnf');
+const preMNF=pre.querySelector('.pre-logo-img');
 const preSub=pre.querySelector('.pre-sub');
 const preFill=document.getElementById('preFill');
 
